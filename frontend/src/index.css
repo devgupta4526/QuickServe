@@ -1,0 +1,22 @@
+@import "tailwindcss";
+
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .print\:w-full, .print\:shadow-none, .print\:bg-white {
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    box-shadow: none !important;
+    background-color: white !important;
+  }
+
+  .print\:hidden {
+    display: none !important;
+  }
+}
