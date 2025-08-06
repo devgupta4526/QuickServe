@@ -6,9 +6,10 @@ export const REFRESH_PATH = "/auth/refresh";
 const secure = NODE_ENV !== "development";
 
 const defaults: CookieOptions = {
-  sameSite: "strict",
+  sameSite: "none",         // allows cross-site cookies
   httpOnly: true,
-  secure,
+  secure: true,             // required on HTTPS
+  domain: "quickserve-ukom.onrender.com" 
 };
 
 export const getAccessTokenCookieOptions = (): CookieOptions => ({
